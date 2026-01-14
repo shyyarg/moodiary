@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:journal_app/pages/dashboard.dart';
+import 'package:journal_app/pages/homepage.dart';
 
 
-class WritePage extends StatefulWidget {
+class JournalEntryScreen extends StatefulWidget {
   final String emotion;
 
-  const WritePage({super.key, required this.emotion});
+  const JournalEntryScreen({super.key, required this.emotion});
 
   @override
-  State<WritePage> createState() => _WritePageState();
+  State<JournalEntryScreen> createState() => _JournalEntryScreen();
 
 }
 
-class _WritePageState extends State<WritePage> {
+class _JournalEntryScreen extends State<JournalEntryScreen> {
 
 
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _entryController = TextEditingController();
 
-  void _saveNameAndGoNext(){
-    String name = _nameController.text.trim();
+  void _saveEntryAndGoNext(){
+    String entry = _entryController.text.trim();
 
-    if (name.isNotEmpty) {
+    if (entry.isNotEmpty) {
       //TODO: might have to save name somewhere for settings if they want to change later
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => DashboardPage()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     } else {
       //show a simple alert if the user does not enter name
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
-      Text('Please enter your name.')));
+      Text('Please fill in the journal.')));
     }
   }
 
@@ -77,6 +77,7 @@ class _WritePageState extends State<WritePage> {
               width: 400,
               height: 300,
               child: TextField(
+                controller: _entryController,
                 minLines: null,
                 maxLines: null, // write a lot
                 expands: true, //expands text field as someone writes
@@ -124,7 +125,7 @@ class _WritePageState extends State<WritePage> {
 
             const SizedBox(height: 20),
             ElevatedButton(
-                onPressed: _saveNameAndGoNext,
+                onPressed: _saveEntryAndGoNext,
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFC9E4DE),
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),

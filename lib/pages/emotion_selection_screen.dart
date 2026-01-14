@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:journal_app/pages/write.dart';
+import 'package:journal_app/pages/journal_entry_screen.dart';
 
 
-class FeelingPage extends StatefulWidget {
+class EmotionSelectionScreen extends StatefulWidget {
 
-  const FeelingPage({super.key});
+  const EmotionSelectionScreen({super.key});
 
   @override
-  State<FeelingPage> createState() => _FeelingPageState();
+  State<EmotionSelectionScreen> createState() => _EmotionSelectionScreen();
 
 }
 
-class _FeelingPageState extends State<FeelingPage> {
+class _EmotionSelectionScreen extends State<EmotionSelectionScreen> {
   late String emotion;
 
 
@@ -63,7 +63,7 @@ class _FeelingPageState extends State<FeelingPage> {
                       emotion = 'happy';
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                        MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                       );
                     },
                   icon: Image.asset(
@@ -77,7 +77,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'sad';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(
@@ -91,7 +91,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'nervous';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(
@@ -105,7 +105,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'frustrated';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                     emotion = 'frustrated';
                   },
@@ -127,7 +127,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'suprised';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(
@@ -141,7 +141,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'mad';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(
@@ -155,7 +155,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'proud';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(
@@ -169,7 +169,7 @@ class _FeelingPageState extends State<FeelingPage> {
                     emotion = 'scared';
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => WritePage(emotion: emotion,)),
+                      MaterialPageRoute(builder: (context) => JournalEntryScreen(emotion: emotion,)),
                     );
                   },
                   icon: Image.asset(

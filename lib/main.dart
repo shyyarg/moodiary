@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:journal_app/model/journal_entry.dart';
-import 'package:journal_app/pages/loading.dart';
+import 'package:journal_app/pages/splash_screen.dart';
+import 'model/journal_entry.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:false,
       title: 'Moodiary',
       theme: ThemeData(fontFamily: 'MochiyPopOne'),
-      home: LoadingPage(),
-      //TODO: LoadingPage() is home, need to change from the one i am testing
+      home: SplashScreen(),
+      //TODO: SplashScreen() is the first page to show up, need to change from the one i am testing
     );
   }
 }

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:journal_app/pages/feeling.dart';
+import 'package:journal_app/pages/emotion_selection_screen.dart';
 
-class NamePage extends StatefulWidget {
+class NameInputScreen extends StatefulWidget {
 
-  const NamePage({super.key});
+  const NameInputScreen({super.key});
 
   @override
-  State<NamePage> createState() => _NamePageState(); //need this for stateful widgets, changing the state would just but the build function
+  State<NameInputScreen> createState() => _NameInputScreen(); //need this for stateful widgets, changing the state would just but the build function
 }
 
 //TODO: need to make the name page only show up for first time users
 
-  class _NamePageState extends State<NamePage> {
+  class _NameInputScreen extends State<NameInputScreen> {
 
     final TextEditingController _nameController = TextEditingController();
 
@@ -22,7 +22,7 @@ class NamePage extends StatefulWidget {
         //TODO: might have to save name somewhere for settings if they want to change later
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FeelingPage()),
+          MaterialPageRoute(builder: (context) => EmotionSelectionScreen()),
         );
       } else {
         //show a simple alert if the user does not enter name

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'name.dart';
+import 'name_input_screen.dart';
 
-class LoadingPage extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
 
-  const LoadingPage({super.key});
+  const SplashScreen({super.key});
 
   @override
-  State<LoadingPage> createState() => _LoadingPageState(); //need this for stateful widgets, changing the state would just but the build function
+  State<SplashScreen> createState() => _SplashScreen(); //need this for stateful widgets, changing the state would just but the build function
 }
 
-  class _LoadingPageState extends State<LoadingPage> with SingleTickerProviderStateMixin {
+  class _SplashScreen extends State<SplashScreen> with SingleTickerProviderStateMixin {
 
     late AnimationController _controller; // controller to manage tne animation
     late Animation<double> _fadeIn; //defines the fade-in animation
@@ -32,7 +32,7 @@ class LoadingPage extends StatefulWidget {
         if (status == AnimationStatus.completed) { //if condition
           Navigator.of(context).pushReplacement( //pushes next page, cant go back
             MaterialPageRoute(
-                builder: (context) => NamePage()),
+                builder: (context) => NameInputScreen()),
           );
         }
 
