@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:journal_app/pages/homepage.dart';
+import 'package:journal_app/pages/home_page.dart';
 
 
 class JournalEntryScreen extends StatefulWidget {
