@@ -22,24 +22,12 @@ class _HomePageState extends State<HomePage> {
     SettingsPage(),
   ];
 
-  // text controller
-  final _controller = TextEditingController();
-
   int _selectedIndex = 0;
 
-
   void _onItemTapped(int index) {
-    if (index == 0) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => EmotionSelectionScreen()),
-      );
-      return;
-    } else {
       setState(() {
         _selectedIndex = index;
       });
-    }
   }
 
 
@@ -52,14 +40,38 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xFFFFD3B6),
         centerTitle: true,
+        automaticallyImplyLeading: false,
         title: Text(
             'MOODIARY',
         style: TextStyle(
           fontSize: 20,
           fontFamily: 'MochiyPopOne',
           color: Color(0xFF3E3E3E),
-        ),),
+        ),
+        ),
       ),
+
+      //floating action button to add new journal entries
+      floatingActionButton: Material(
+        color: Color(0xFFFFD3B6),
+        shape: CircleBorder(),
+        child: InkWell(
+          customBorder: CircleBorder(),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EmotionSelectionScreen()),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Icon(Icons.add, color: Color(0xFF3E3E3E)),
+          ),
+        ),
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
@@ -68,8 +80,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFFFFF9F4),
         onTap: _onItemTapped,
         items: [BottomNavigationBarItem(
-          icon: Icon(Icons.add),
-          label: 'Add',
+          icon: Icon(Icons.book),
+          label: 'Journals',
         ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
@@ -82,7 +94,8 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
-          ),],
+          ),
+        ],
       ),
     );
   }

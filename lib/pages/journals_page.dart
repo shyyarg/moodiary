@@ -13,7 +13,7 @@ class _JournalsPageState extends State<JournalsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Color(0xFFFFF9F4),
     );
   }
 }
