@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:journal_app/data/journal_database.dart';
 import 'package:journal_app/pages/home_page.dart';
 
 
@@ -15,14 +16,15 @@ class JournalEntryScreen extends StatefulWidget {
 
 class _JournalEntryScreen extends State<JournalEntryScreen> {
 
+  JournalDatabase db = JournalDatabase();
+
 
   final TextEditingController _entryController = TextEditingController();
 
   void _saveEntryAndGoNext(){
     String entry = _entryController.text.trim();
-
     if (entry.isNotEmpty) {
-      //TODO: might have to save name somewhere for settings if they want to change later
+      db.createJournalEntry(emotion: widget.emotion, text: entry, dateTime: DateTime.now());
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),

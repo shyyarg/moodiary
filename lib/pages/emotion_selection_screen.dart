@@ -44,7 +44,7 @@ class _EmotionSelectionScreen extends State<EmotionSelectionScreen> {
         child: Column(
           children: [
             Text(
-              'How are you feeling today?',
+              'How are you feeling?',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 34,
